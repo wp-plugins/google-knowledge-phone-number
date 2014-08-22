@@ -15,7 +15,7 @@
  * Plugin Name:       Google Knowledge Company's Phone Number
  * Plugin URI:        
  * Description:       Add JSON-LD markup in your WordPress website, to display your company's phone number(s) on Google Knowledge Panels
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Rémy Perona
  * Author URI:        http://remyperona.fr
  * Text Domain:       google-knowledge-phone-number
