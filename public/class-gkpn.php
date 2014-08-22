@@ -133,17 +133,17 @@ class GKPN {
 
     /* Sections list for loop */
         $sections = array(
-            'customer_support',
-            'technical_support',
-            'billing_support',
-            'bill_payment',
-            'sales',
-            'reservations',
-            'credit_card_support',
-            'emergency',
-            'baggage_tracking',
-            'roadside_assistance',
-            'package_tracking'
+            'gkpn_customer_support' => 'customer support',
+            'gkpn_technical_support' => 'technical support',
+            'gkpn_billing_support' => 'billing support',
+            'gkpn_bill_payment' => 'bill payment',
+            'gkpn_sales' => 'sales',
+            'gkpn_reservations' => 'reservations',
+            'gkpn_credit_card_support' => 'credit card support',
+            'gkpn_emergency' => 'emergency',
+            'gkpn_baggage_tracking' => 'baggage tracking',
+            'gkpn_roadside_assistance' => 'roadside assistance',
+            'gkpn_package_tracking' => 'package tracking'
             );
 
     /* Properties list for loop */
@@ -156,13 +156,13 @@ class GKPN {
         $contact_types = '';
         $telephone = '';
 
-        foreach ( $sections as $section ) {
+        foreach ( $sections as $section => $section_value ) {
 
             $telephone = $settings_value->get_option( 'telephone', $section );
 
             if ( !empty( $telephone ) ) {
                 $contact_types .= '{ "@type" : "ContactPoint",
-                "contactType" : "' . str_replace( '_', ' ', $section ) . '",
+                "contactType" : "' . $section_value . '",
                 "telephone" : "' . $telephone . '",';
                 
                 foreach ( $properties as $key => $property ) {
