@@ -17,6 +17,7 @@ You can now include your company's number in search results.
 By using this plugin on your official site, Google will be able to display it in the Knowledge panel for some searches.
 
 For now, there is a defined list of phone numbers that can be included :
+
 * customer service
 * technical support
 * billing support
