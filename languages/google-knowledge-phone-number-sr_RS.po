@@ -1,0 +1,142 @@
+# Copyright (C) 2013 TODO
+# This file is distributed under the same license as the TODO package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Google Knowledge Phone Number 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/plugins/plugin-name\n"
+"POT-Creation-Date: 2014-08-21 21:24+0100\n"
+"PO-Revision-Date: 2014-12-16 10:49+0100\n"
+"Last-Translator: Borisa Djuraskovic <borisad@webhostinghub.com>\n"
+"Language-Team: Remy Perona <remperona@gmail.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;esc_html_e;esc_html__;esc_attr_e;"
+"esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2\n"
+"X-Poedit-Basepath: /Users/yui/Sites/wordpress/wp-content/plugins/google-"
+"knowledge-phone-number/\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/gkpn-admin.php:125 admin/gkpn-admin.php:126 admin/views/admin.php:17
+msgid "Google Knowledge Phone Number"
+msgstr "Google Knowledge Phone Number"
+
+#: admin/gkpn-admin.php:152
+msgid "Settings"
+msgstr "Podešavanje"
+
+#: admin/gkpn-admin.php:166
+msgid "Customer Support"
+msgstr "Korisnički servis"
+
+#: admin/gkpn-admin.php:170
+msgid "Technical Support"
+msgstr "Tehnička podrška"
+
+#: admin/gkpn-admin.php:174
+msgid "Billing Support"
+msgstr "Podrška za račune"
+
+#: admin/gkpn-admin.php:178
+msgid "Bill Payment"
+msgstr "Plaćanje računa"
+
+#: admin/gkpn-admin.php:182
+msgid "Sales"
+msgstr "Prodaja"
+
+#: admin/gkpn-admin.php:186
+msgid "Reservations"
+msgstr "Rezervacije"
+
+#: admin/gkpn-admin.php:190
+msgid "Credit Card Support"
+msgstr "Podrška za kreditne kartice"
+
+#: admin/gkpn-admin.php:194
+msgid "Emergency"
+msgstr "Hitna pomoć"
+
+#: admin/gkpn-admin.php:198
+msgid "Baggage Tracking"
+msgstr "Praćenje prtljaga"
+
+#: admin/gkpn-admin.php:202
+msgid "Roadside Assistance"
+msgstr "Pomoć na putu"
+
+#: admin/gkpn-admin.php:206
+msgid "Package Tracking"
+msgstr "Praćenje paketa"
+
+#: admin/gkpn-admin.php:213
+msgid "Phone number"
+msgstr "Broj telefona"
+
+#: admin/gkpn-admin.php:214
+msgid ""
+"Required. An internationalized version of the phone number, starting with "
+"the \"+\" symbol and country code"
+msgstr ""
+"Obavezno. Internacionalizovana verzija telefonskog broja koji počinje "
+"simbolom \"+\" i pozivnim brojem države."
+
+#: admin/gkpn-admin.php:219
+msgid "Area Served"
+msgstr "Zona"
+
+#: admin/gkpn-admin.php:220
+#, php-format
+msgid ""
+"Optional. The geographical region served by the number, specified as a "
+"schema.org/AdministrativeArea. Countries may be specified concisely using "
+"just their <a href=\"%s\">standard ISO-3166</a> two-letter code, separated "
+"by a comma. If omitted, the number is assumed to be global."
+msgstr ""
+"Opciono. Geografsko područje određenog pozivnog broja, navedenog kao schema."
+"org/Administrativna oblast. Nazivi država mogu biti navedeni skraćeno, na "
+"osnovu svog <a href=\"%s\">standard ISO-3166</a> koda od po dva slova, "
+"odvojeni zarezima. Ako broj nije naveden, pretpostavlja se da je globalan.   "
+
+#: admin/gkpn-admin.php:225
+msgid "Contact Option"
+msgstr "Opcije kontakta"
+
+#: admin/gkpn-admin.php:226
+msgid "Optional. Phone number details"
+msgstr "Opcione. Detalji broja telefona "
+
+#: admin/gkpn-admin.php:229
+msgid "Toll Free"
+msgstr "Besplatno"
+
+#: admin/gkpn-admin.php:230
+msgid "Support for hearing impaired"
+msgstr "Podrška za gluvoneme"
+
+#: admin/gkpn-admin.php:235
+msgid "Available Languages"
+msgstr "Raspoloživi jezici"
+
+#: admin/gkpn-admin.php:236
+msgid ""
+"Optional details about the language spoken. Languages may be specified by "
+"their common English name, separated by a comma. If omitted, the language "
+"defaults to English."
+msgstr ""
+"Opcioni detalji o govornom jeziku. Jezici mogu biti navedeni pod svojim "
+"uobičajenim nazivima na engleskom, odvojeni zarezima. Ako nije naveden, "
+"podrazumevani jezik je engleski."
+
+#: admin/views/admin.php:19
+msgid ""
+"You can fill only the desired tab(s) data and leave the others blank. You "
+"have to save every tab individually for your changes to take effect."
+msgstr ""
+"Možete popuniti podacima samo tabulatore koje želite i ostaviti ostala polja "
+"prazna. Morate sačuvati svaki tabulator posebno da bi vaše promene imale "
+"efekta."
