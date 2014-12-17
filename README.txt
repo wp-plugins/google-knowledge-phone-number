@@ -34,6 +34,8 @@ Additionally, You will be able to set some options for each type of number, like
 
 For more information, you can read the official page : https://support.google.com/webmasters/answer/4620709?hl=en
 
+Serbo-Croatian translation by http://www.webhostinghub.com/
+
 == Installation ==
 
 = Using The WordPress Dashboard =
