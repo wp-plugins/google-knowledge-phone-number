@@ -66,9 +66,6 @@ class GKPN {
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
-		// Activate plugin when new blog is added
-		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
-
 		/* Define custom functionality.
 		 * Refer To http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		 */
@@ -105,123 +102,6 @@ class GKPN {
 	}
 
 	/**
-	 * Fired when the plugin is activated.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @param    boolean    $network_wide    True if WPMU superadmin uses
-	 *                                       "Network Activate" action, false if
-	 *                                       WPMU is disabled or plugin is
-	 *                                       activated on an individual blog.
-	 */
-	public static function activate( $network_wide ) {
-
-		if ( function_exists( 'is_multisite' ) && is_multisite() ) {
-
-			if ( $network_wide  ) {
-
-				// Get all blog ids
-				$blog_ids = self::get_blog_ids();
-
-				foreach ( $blog_ids as $blog_id ) {
-
-					switch_to_blog( $blog_id );
-					self::single_activate();
-
-					restore_current_blog();
-				}
-
-			} else {
-				self::single_activate();
-			}
-
-		} else {
-			self::single_activate();
-		}
-
-	}
-
-	/**
-	 * Fired when the plugin is deactivated.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @param    boolean    $network_wide    True if WPMU superadmin uses
-	 *                                       "Network Deactivate" action, false if
-	 *                                       WPMU is disabled or plugin is
-	 *                                       deactivated on an individual blog.
-	 */
-	public static function deactivate( $network_wide ) {
-
-		if ( function_exists( 'is_multisite' ) && is_multisite() ) {
-
-			if ( $network_wide ) {
-
-				// Get all blog ids
-				$blog_ids = self::get_blog_ids();
-
-				foreach ( $blog_ids as $blog_id ) {
-
-					switch_to_blog( $blog_id );
-					self::single_deactivate();
-
-					restore_current_blog();
-
-				}
-
-			} else {
-				self::single_deactivate();
-			}
-
-		} else {
-			self::single_deactivate();
-		}
-
-	}
-
-	/**
-	 * Fired when a new site is activated with a WPMU environment.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @param    int    $blog_id    ID of the new blog.
-	 */
-	public function activate_new_site( $blog_id ) {
-
-		if ( 1 !== did_action( 'wpmu_new_blog' ) ) {
-			return;
-		}
-
-		switch_to_blog( $blog_id );
-		self::single_activate();
-		restore_current_blog();
-
-	}
-
-	/**
-	 * Get all blog ids of blogs in the current network that are:
-	 * - not archived
-	 * - not spam
-	 * - not deleted
-	 *
-	 * @since    1.0.0
-	 *
-	 * @return   array|false    The blog ids, false if no matches.
-	 */
-	private static function get_blog_ids() {
-
-		global $wpdb;
-
-		// get an array of blog ids
-		$sql = "SELECT blog_id FROM $wpdb->blogs
-			WHERE archived = '0' AND spam = '0'
-			AND deleted = '0'";
-
-		return $wpdb->get_col( $sql );
-
-	}
-
-	/**
 	 * Load the plugin text domain for translation.
 	 *
 	 * @since    1.0.0
@@ -253,17 +133,17 @@ class GKPN {
 
     /* Sections list for loop */
         $sections = array(
-            'customer_support',
-            'technical_support',
-            'billing_support',
-            'bill_payment',
-            'sales',
-            'reservations',
-            'credit_card_support',
-            'emergency',
-            'baggage_tracking',
-            'roadside_assistance',
-            'package_tracking'
+            'gkpn_customer_support' => 'customer support',
+            'gkpn_technical_support' => 'technical support',
+            'gkpn_billing_support' => 'billing support',
+            'gkpn_bill_payment' => 'bill payment',
+            'gkpn_sales' => 'sales',
+            'gkpn_reservations' => 'reservations',
+            'gkpn_credit_card_support' => 'credit card support',
+            'gkpn_emergency' => 'emergency',
+            'gkpn_baggage_tracking' => 'baggage tracking',
+            'gkpn_roadside_assistance' => 'roadside assistance',
+            'gkpn_package_tracking' => 'package tracking'
             );
 
     /* Properties list for loop */
@@ -276,13 +156,13 @@ class GKPN {
         $contact_types = '';
         $telephone = '';
 
-        foreach ( $sections as $section ) {
+        foreach ( $sections as $section => $section_value ) {
 
             $telephone = $settings_value->get_option( 'telephone', $section );
 
             if ( !empty( $telephone ) ) {
                 $contact_types .= '{ "@type" : "ContactPoint",
-                "contactType" : "' . str_replace( '_', ' ', $section ) . '",
+                "contactType" : "' . $section_value . '",
                 "telephone" : "' . $telephone . '",';
                 
                 foreach ( $properties as $key => $property ) {

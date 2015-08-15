@@ -14,7 +14,7 @@
 ?>
 
 <div class="wrap">
-<h2><?php _e( 'Google Knowledge Phone Number', $this->plugin_slug ); ?></h2>
+<h1><?php _e( 'Google Knowledge Phone Number', $this->plugin_slug ); ?></h1>
 <?php $settings_api = WeDevs_Settings_API::get_instance(); ?>
 <p><?php _e( 'You can fill only the desired tab(s) data and leave the others blank. You have to save every tab individually for your changes to take effect.', $this->plugin_slug ); ?></p>
 <?php
